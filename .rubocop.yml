@@ -1,0 +1,19 @@
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'config/routes.rb'
+    - 'tmp/**/*'
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
