@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.5.0)
+      concurrent-ruby (~> 1.0)
     actioncable (7.1.2)
       actionpack (= 7.1.2)
       activesupport (= 7.1.2)
@@ -260,6 +262,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aasm (~> 5.5)
   bootsnap
   debug
   factory_bot_rails (~> 6.2)
@@ -272,7 +275,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   rubocop-shopify
-  stripe
+  stripe (~> 10.4)
 
 RUBY VERSION
    ruby 3.2.2p53

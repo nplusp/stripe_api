@@ -4,11 +4,12 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'aasm', '~> 5.5'
 gem 'bootsnap', require: false
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.2'
-gem 'stripe'
+gem 'stripe', '~> 10.4'
 
 group :development, :test do
   gem 'debug'
