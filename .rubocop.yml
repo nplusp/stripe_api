@@ -17,3 +17,6 @@ Style/ClassAndModuleChildren:
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
