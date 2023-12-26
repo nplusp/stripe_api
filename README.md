@@ -25,3 +25,10 @@ Submit your code via a public git repository.
 * [Subscription UI](https://dashboard.stripe.com/subscriptions) to create a subscription and pay the invoice
 * [Stripe CLI](https://stripe.com/docs/stripe-cli) to [listen to events](https://stripe.com/docs/cli/listen) triggered by Stripe on your local machine [Stripe Webhooks](https://stripe.com/docs/billing/subscriptions/webhooks)
 * expected [status codes](https://stripe.com/docs/webhooks#fix-http-status-codes) and [behavior](https://stripe.com/docs/webhooks#behaviors) of your webhook
+
+## How to run
+* Clone the repo
+* Provide your Stripe Secret API key in .env file
+* Run `stripe login --project-name=stripe_api` to generate Stripe config in `~/.config/stripe/config.toml`
+* Copy it over to project folder: `cp -r ~/.config/stripe/ /PROJECT_FOLDER/.stripe/`
+* Run `docker-compose up`

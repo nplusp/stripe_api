@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+
+  web:
+    build: .
+    command: ["./bin/start_dev_server"]
+    volumes:
+      - .:/rails
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  stripe:
+    image: stripe/stripe-cli
+    command: ["listen", "--project-name", "stripe_api", "--forward-to", "web:3000/stripe/webhook", "--api-key", "${STRIPE_SECRET_KEY}"]
+    volumes:
+      - ./.stripe:/root/.stripe
+    depends_on:
+      - web
