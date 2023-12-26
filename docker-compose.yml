@@ -16,10 +16,12 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    tty: true
+    stdin_open: true
 
   stripe:
     image: stripe/stripe-cli
-    command: ["listen", "--project-name", "stripe_api", "--forward-to", "web:3000/stripe/webhook", "--api-key", "${STRIPE_SECRET_KEY}"]
+    command: ["listen", "--project-name", "stripe_api", "--forward-to", "http://web:3000/stripe/webhooks", "--api-key", "${STRIPE_SECRET_KEY}"]
     volumes:
       - ./.stripe:/root/.stripe
     depends_on:
