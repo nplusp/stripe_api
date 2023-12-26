@@ -77,6 +77,9 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.5)
@@ -243,7 +246,6 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     stringio (3.1.0)
-    stripe (10.4.0)
     thor (1.3.0)
     timeout (0.4.1)
     tzinfo (2.0.6)
@@ -263,6 +265,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.5)
+  annotate
   bootsnap
   debug
   factory_bot_rails (~> 6.2)
@@ -275,7 +278,6 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   rubocop-shopify
-  stripe (~> 10.4)
 
 RUBY VERSION
    ruby 3.2.2p53
