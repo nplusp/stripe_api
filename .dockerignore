@@ -32,3 +32,5 @@
 
 # Ignore stripe config
 /.stripe
+
+/vendor/bundle
