@@ -10,14 +10,17 @@
 #  uuid       :uuid             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  stripe_id  :string
 #
 # Indexes
 #
-#  index_stripe_subscriptions_on_uuid  (uuid) UNIQUE
+#  index_stripe_subscriptions_on_stripe_id  (stripe_id) UNIQUE
+#  index_stripe_subscriptions_on_uuid       (uuid) UNIQUE
 #
 FactoryBot.define do
-  factory :stripe_subscription, class: 'Stripe::Subscription' do
+  factory :stripe_subscription, class: 'StripeSubscription' do
     uuid { SecureRandom.uuid }
+    stripe_id { SecureRandom.uuid }
     status { 'unpaid' }
 
     trait :paid do
