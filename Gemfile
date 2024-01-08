@@ -9,6 +9,7 @@ gem 'bootsnap', require: false
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.2'
+gem 'stripe'
 
 group :development, :test do
   gem 'debug'
